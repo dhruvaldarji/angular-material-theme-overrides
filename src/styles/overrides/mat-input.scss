@@ -1,0 +1,15 @@
+$input-width: calc(100% - 1.8rem);
+
+.mat-input-element {
+  transition: border .1s linear,background-color .1s linear;
+  border-radius: .3rem;
+  width: $input-width !important;
+  max-width: $input-width !important;
+  padding: .4rem 0.8rem !important;
+  border: 1px solid !important;
+  border-color: mat-color($mat-blue-grey) !important;
+
+  &:focus {
+    border-color: mat-color($primary) !important;
+  }
+}

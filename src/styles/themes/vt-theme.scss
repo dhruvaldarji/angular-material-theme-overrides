@@ -1,0 +1,31 @@
+@import '../variables/colors/index';
+
+html {
+  font-size: 10px;
+  font-family: Roboto,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif
+}
+
+body {
+  font-size: 14px;
+  // Uncomment below for dark theme.
+  // background: #303030;
+  // color: white;
+}
+
+// Theme Overrides
+// Import library functions for theme creation.
+@import '~@angular/material/theming';
+
+// Include non-theme styles for core.
+@include mat-core();
+
+// Define your application's custom theme.
+$primary: mat-palette($vt-primary);
+$accent: mat-palette($mat-pink, A200, A100, A400);
+
+// Swap between light and dark theme
+$theme: mat-light-theme($primary, $accent);
+// $theme: mat-dark-theme($primary, $accent);
+
+// Include theme styles for Angular Material components.
+@include angular-material-theme($theme);
