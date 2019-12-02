@@ -1,16 +1,16 @@
 .mat-button,
 .mat-flat-button,
 .mat-raised-button,
-.mat-icon-button,
 .mat-stroked-button {
-  border-radius: 2rem !important;
-  min-width: 10rem !important;
+  &:not(.mat-icon-button) {
+    border-radius: 2rem !important;
+    min-width: 10rem !important;
+  }
 }
 
 .mat-button,
 .mat-flat-button,
-.mat-raised-button,
-.mat-icon-button{
+.mat-raised-button {
   line-height: 3.2rem !important;
 }
 

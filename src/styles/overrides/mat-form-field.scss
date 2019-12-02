@@ -1,9 +1,19 @@
 .mat-form-field {
   &-underline {
-    display: none;
+    // display: none;
   }
 
   &-label {
-    padding: .4rem 0.8rem !important;
+    // padding: .4rem 0.8rem !important;
   }
+
+  &-outline {
+    // border: 1px solid !important;
+    // border-color: mat-color($mat-blue-grey) !important;
+
+    &:focus {
+      // border-color: mat-color($primary) !important;
+    }
+  }
+
 }

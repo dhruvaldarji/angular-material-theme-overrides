@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent  {
   name = 'Material Theme Overrides';
+  value = "";
+  hide = true;
 }
