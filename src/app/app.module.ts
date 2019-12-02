@@ -5,9 +5,12 @@ import { BrowserModule, } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   MatButtonModule,
+  MatCheckboxModule,
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
+  MatRadioModule,
+  MatSelectModule,
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -21,9 +24,12 @@ import { HelloComponent } from './hello.component';
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
+    MatCheckboxModule,
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
+    MatRadioModule,
+    MatSelectModule,
   ],
   declarations: [ AppComponent, HelloComponent ],
   bootstrap:    [ AppComponent ]
