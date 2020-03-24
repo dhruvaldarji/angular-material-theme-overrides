@@ -25,9 +25,18 @@ body {
 $primary: mat-palette($vt-primary);
 $accent: mat-palette($mat-pink, A200, A100, A400);
 
-// Swap between light and dark theme
+
+// SWAPPING THEMES
+// NOTE: Comment the below for DARK THEME
 $theme: mat-light-theme($primary, $accent);
+
+// NOTE: Uncomment below for the DARK THEME
 // $theme: mat-dark-theme($primary, $accent);
+// body {
+//   background: #303030;
+//   color: white;
+// }
+
 
 // Include theme styles for Angular Material components.
 @include angular-material-theme($theme);
