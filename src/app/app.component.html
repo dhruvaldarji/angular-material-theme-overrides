@@ -1,22 +1,22 @@
 <hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<p>Start editing to see some magic happen :)</p>
 <div>
-  <p>
-    To enable Dark Mode, follow the below steps.
-  </p>
   <ul>
-    <li>Open the "src/styles/themes/vt-themes.scss" file.</li>
-    <li>Comment the "Light Theme" on "line 31".</li>
-    <li>Uncomment the "Dark Theme" on "lines 33-38".</li>
+    <li>Flip the switch below to toggle the lights.</li>
+    <li>See "src/styles/themes/vt-themes.scss" file for details.</li>
   </ul>
-  <hr/>
+  <hr />
 </div>
 
 <div class="example-container">
   <form class="example-container" [formGroup]="options">
-    <mat-checkbox formControlName="hideRequired">Hide required marker</mat-checkbox>
+    <mat-slide-toggle [checked]="theme" (change)="toggleTheme()">
+      Toggle on {{ theme ? 'Light Theme' : 'Dark Theme ' }}
+    </mat-slide-toggle>
+    <hr />
+    <mat-checkbox formControlName="hideRequired"
+      >Hide required marker</mat-checkbox
+    >
     <div>
       <label>Float label: </label>
       <mat-radio-group formControlName="floatLabel">
@@ -28,34 +28,37 @@
   </form>
 
   <mat-form-field
-      [hideRequiredMarker]="options.value.hideRequired"
-      [floatLabel]="options.value.floatLabel">
-    <input matInput placeholder="Simple placeholder" required>
+    [hideRequiredMarker]="options.value.hideRequired"
+    [floatLabel]="options.value.floatLabel"
+  >
+    <input matInput placeholder="Simple placeholder" required />
   </mat-form-field>
 
   <mat-form-field [floatLabel]="options.value.floatLabel">
     <mat-label>Both a label and a placeholder</mat-label>
-    <input matInput placeholder="Simple placeholder">
+    <input matInput placeholder="Simple placeholder" />
   </mat-form-field>
 
   <mat-form-field
-      [hideRequiredMarker]="options.value.hideRequired"
-      [floatLabel]="options.value.floatLabel">
+    [hideRequiredMarker]="options.value.hideRequired"
+    [floatLabel]="options.value.floatLabel"
+  >
     <mat-select required>
       <mat-option>-- None --</mat-option>
       <mat-option value="option">Option</mat-option>
     </mat-select>
-    <mat-label><mat-icon>favorite</mat-icon> <b> Fancy</b> <i> label</i></mat-label>
+    <mat-label
+      ><mat-icon>favorite</mat-icon> <b> Fancy</b> <i> label</i></mat-label
+    >
   </mat-form-field>
 </div>
 
 <form id="example-form" class="example-form">
-  
   <h2>Form Fields</h2>
   <p>
     <mat-form-field appearance="legacy">
       <mat-label>Legacy form field</mat-label>
-      <input matInput placeholder="Placeholder">
+      <input matInput placeholder="Placeholder" />
       <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
       <mat-hint>Hint</mat-hint>
     </mat-form-field>
@@ -63,7 +66,7 @@
   <p>
     <mat-form-field appearance="standard">
       <mat-label>Standard form field</mat-label>
-      <input matInput placeholder="Placeholder">
+      <input matInput placeholder="Placeholder" />
       <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
       <mat-hint>Hint</mat-hint>
     </mat-form-field>
@@ -71,7 +74,7 @@
   <p>
     <mat-form-field appearance="fill">
       <mat-label>Fill form field</mat-label>
-      <input matInput placeholder="Placeholder">
+      <input matInput placeholder="Placeholder" />
       <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
       <mat-hint>Hint</mat-hint>
     </mat-form-field>
@@ -79,7 +82,7 @@
   <p>
     <mat-form-field appearance="outline">
       <mat-label>Outline form field</mat-label>
-      <input matInput placeholder="Placeholder">
+      <input matInput placeholder="Placeholder" />
       <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
       <mat-hint>Hint</mat-hint>
     </mat-form-field>
@@ -87,27 +90,39 @@
 
   <div class="example-container">
     <mat-form-field>
-      <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
-      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      <input
+        matInput
+        placeholder="Enter your password"
+        [type]="hide ? 'password' : 'text'"
+      />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
       </button>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="Amount" type="number" class="example-right-align">
+      <input
+        matInput
+        placeholder="Amount"
+        type="number"
+        class="example-right-align"
+      />
       <span matPrefix>$&nbsp;</span>
       <span matSuffix>.00</span>
     </mat-form-field>
   </div>
 
   <mat-form-field class="example-full-width">
-    <textarea
-      matInput
-      placeholder="Leave a comment"
-    ></textarea>
+    <textarea matInput placeholder="Leave a comment"></textarea>
   </mat-form-field>
 
-  <hr/>
+  <hr />
 
   <h2>Buttons</h2>
 
@@ -152,13 +167,25 @@
     <button mat-icon-button aria-label="Example icon-button with a heart icon">
       <mat-icon>favorite</mat-icon>
     </button>
-    <button mat-icon-button color="primary" aria-label="Example icon-button with a heart icon">
+    <button
+      mat-icon-button
+      color="primary"
+      aria-label="Example icon-button with a heart icon"
+    >
       <mat-icon>favorite</mat-icon>
     </button>
-    <button mat-icon-button color="warn" aria-label="Example icon-button with a heart icon">
+    <button
+      mat-icon-button
+      color="warn"
+      aria-label="Example icon-button with a heart icon"
+    >
       <mat-icon>favorite</mat-icon>
     </button>
-    <button mat-icon-button disabled aria-label="Example icon-button with a heart icon">
+    <button
+      mat-icon-button
+      disabled
+      aria-label="Example icon-button with a heart icon"
+    >
       <mat-icon>favorite</mat-icon>
     </button>
   </div>

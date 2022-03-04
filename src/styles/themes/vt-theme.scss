@@ -1,17 +1,15 @@
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 @import '../variables/colors/index';
 
 html {
   font-size: 10px;
-  font-family: Roboto,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif
+  font-family: Roboto, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica,
+    Arial, 'Lucida Grande', sans-serif;
 }
 
 body {
   font-size: 14px;
-  // Uncomment below for dark theme.
-  // background: #303030;
-  // color: white;
 }
 
 // Theme Overrides
@@ -25,18 +23,20 @@ body {
 $primary: mat-palette($vt-primary);
 $accent: mat-palette($mat-pink, A200, A100, A400);
 
-
 // SWAPPING THEMES
-// NOTE: Comment the below for DARK THEME
-$theme: mat-light-theme($primary, $accent);
 
-// NOTE: Uncomment below for the DARK THEME
-// $theme: mat-dark-theme($primary, $accent);
-// body {
-//   background: #303030;
-//   color: white;
-// }
+.theme {
+  &--light {
+    $theme: mat-light-theme($primary, $accent);
 
+    @include angular-material-theme($theme);
+  }
 
-// Include theme styles for Angular Material components.
-@include angular-material-theme($theme);
+  &--dark {
+    $theme: mat-dark-theme($primary, $accent);
+    background: #303030;
+    color: white;
+
+    @include angular-material-theme($theme);
+  }
+}

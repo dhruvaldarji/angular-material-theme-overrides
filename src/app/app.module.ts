@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BrowserModule, } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   MatButtonModule,
@@ -11,6 +11,7 @@ import {
   MatInputModule,
   MatRadioModule,
   MatSelectModule,
+  MatSlideToggleModule,
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -30,8 +31,9 @@ import { HelloComponent } from './hello.component';
     MatInputModule,
     MatRadioModule,
     MatSelectModule,
+    MatSlideToggleModule,
   ],
-  declarations: [ AppComponent, HelloComponent ],
-  bootstrap:    [ AppComponent ]
+  declarations: [AppComponent, HelloComponent],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
